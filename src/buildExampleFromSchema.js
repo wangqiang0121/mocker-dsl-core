@@ -9,7 +9,7 @@ function buildExampleFromSchema (schema) {
     if (!param.key) return
     // 简单值使用example，含有子集的结构需要单独处理
     const simpleType = ['number', 'boolean', 'string']
-    if ((simpleType.includes(param.key) && (param.example || param.example === false))) {
+    if ((simpleType.includes(param.type) && (param.example || param.example === false))) {
       example[param.key] = param.example
     } else {
       example[param.key] = buildExample(param)
